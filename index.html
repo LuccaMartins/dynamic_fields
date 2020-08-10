@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>UPFLOW Challenge</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/funcoes.js"></script>         
+    </head>
+    <body>
+        <div id="div-start">
+            <label>Type the number of fields you want: </label>
+            <input id="input-numberFields">
+            <!-- <small>Digite um número inteiro e positivo</small> -->
+            <button id="btn-generate" type="submit"> Generate </button>
+        </div>
+        <div>
+            <form id="form-fields">
+                <div id="dynamic-fields">
+                    
+                </div>
+                <select id="operation" hidden="true">
+                    <option selected> + </option>
+                    <option> - </option>
+                    <option> * </option>
+                    <option> / </option>
+                </select>
+                <button type="submit" id="btn-calculate" hidden="true">Calculate</button>
+            </form>
+        </div>
+    </body>
+</html>
