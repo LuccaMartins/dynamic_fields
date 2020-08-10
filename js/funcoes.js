@@ -18,10 +18,8 @@ $(document).ready(function(){
             $(newField).prop('id', "field-" + i);
             $(newField).addClass("field");
             $(newField).prop('name', i);
-            
+        
 
-
-            
             newDiv.appendChild(newField);
             
             var operator = operation.children("option:selected").val();
