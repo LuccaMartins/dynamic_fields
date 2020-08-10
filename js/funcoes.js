@@ -19,6 +19,9 @@ $(document).ready(function(){
             $(newField).addClass("field");
             $(newField).prop('name', i);
             
+
+
+            
             newDiv.appendChild(newField);
             
             var operator = operation.children("option:selected").val();
