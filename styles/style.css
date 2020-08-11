@@ -1,9 +1,130 @@
+:root{
+    font-family: 'Nova Flat', cursive;
+    color: #363636;
+    --font-std: 'Nova Flat', cursive;
+    --color-bg-principal: rgb(201, 220, 226);
+    --color-border: #162288;
+    --color-bg-secondary: #2e2e2e;
+}
+
+body{
+    background-color: var(--color-bg-principal);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo{
+    width: 10rem;
+    display: grid;
+    justify-self: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn{
+    font-family: var(--font-std);
+}
+
 #btn-calculate{
-    background-color: green;
+    /* background-color: var(--color-btn-calculate); */
+    width: 5rem;
+    height: 1.35rem;
+    background: 0;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    border-radius: 0.5rem 0.1rem;
 }
 
 .field {
     width: 1.5rem;
     height: 1.2rem;
     margin: 1rem 0.5rem;
+    text-align: center;
+    color: white;
+    background-color: var(--color-input-std);
+
+}
+
+#div-start{
+    display: grid;
+    justify-self: center;
+    text-align: center;
+    width: 18rem;
+    height: 4rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+
+#input-numberFields{
+    display: grid;
+    justify-self: center;
+    text-align: center;
+    width: 4rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    border: 1px solid var(--color-border);
+
+}
+
+#btn-generate{
+    display: inline-block;
+    width: 5rem;
+    height: 1.35rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.4rem 0.05rem;
+    background: 0;
+}
+
+#div-fields{
+    visibility: hidden;
+    color: aliceblue;
+    display: grid;
+    justify-self: center;
+    text-align: center;
+    width: 18rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding: 1rem;
+    background-color: var(--color-bg-secondary);
+}
+
+#div-result{
+    visibility: hidden;
+    display: grid;
+    justify-self: center;
+    text-align: center;
+    width: 18rem;
+    height: 4rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.3rem;
+    padding: 1rem;
+}
+
+#div-input-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+#operation{
+    width: 2rem;
+    margin-right: 0.5rem;
+    background-color: var(--color-input-std);
+    color: white;
+    font-family: var(--font-std);
+}
+
+#input-result{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background: 0;
+    border: 0;
+    font-size: 20px;
+    background-color: var(--color-input-std);
+
 }

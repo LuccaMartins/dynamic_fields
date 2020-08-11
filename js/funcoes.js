@@ -3,6 +3,7 @@ $(document).ready(function(){
     var btn_Generate = $('#btn-generate');
     var dynamic_Fields = $('#dynamic-fields');
     var btn_Calculate = $('#btn-calculate');
+    // var div_Result = $('#div-result');
     var operation = $('#operation');
     var numberFields = 0;
 
@@ -38,6 +39,7 @@ $(document).ready(function(){
     })
 
     btn_Generate.click(function(){
+        $(document.getElementById('div-fields')).css({"visibility":"visible"});
         numberFields = document.getElementById('input-numberFields').value;
         if(!$.isNumeric(numberFields) || numberFields <= 0){
             alert("The value must be a positive number!");
@@ -51,7 +53,6 @@ $(document).ready(function(){
         if(result != null){
             switch(operation.children("option:selected").val()){
                 case "+":
-                    alert(result + " " + value);
                     return result + value;
                 case "-":
                     return result - value;
@@ -66,12 +67,28 @@ $(document).ready(function(){
         }
     }
 
-    $("#form-fields").submit(function(){
+    btn_Calculate.click(function(){
         var result = null;
+        var valid = true;
         $(".field").each(function(){
             var value = parseFloat($(this).val());
+            if(!$.isNumeric(value)){
+                alert("The values must be numbers!");
+                valid = false;
+                return false;
+            }
             result = operate(result, value);
         });
-        alert(result);
+
+        if(valid == true){
+            showResult(result);
+        }
+
+        
     });
+
+    function showResult(result){
+        $(document.getElementById('div-result')).css({"visibility": "visible"});
+        $(document.getElementById('input-result')).val(result);
+    }
 });
