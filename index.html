@@ -6,34 +6,38 @@
         <link rel="stylesheet" href="styles/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/funcoes.js"></script>         
+        <script src="js/funcoes.js"></script>  
+        
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
     </head>
     <body>
         <img id="logo" src="/images/upflow.png" alt="logo">
         <div id="div-start">
-            <label>Type the number of fields you want: </label>
+            <label>Digite a quantidade de campos envolvidos na operação: </label>
             <div id="div-input-btn">
                 <input id="input-numberFields">
-                <button id="btn-generate" class="btn" type="submit">Generate</button>
+                <button id="btn-generate" class="btn" >Gerar campos</button>
             </div>
         </div>
         <div id="div-fields">
             <form id="form-fields">
                 <div id="dynamic-fields">
-                    
+                    <!-- javascript -->
                 </div>
-                <select id="operation" hidden="true">
-                    <option selected> + </option>
-                    <option> - </option>
-                    <option> * </option>
-                    <option> / </option>
-                </select>
-                <button type="button" id="btn-calculate" class="btn" hidden="true">Calculate</button>
+                <button id="btn-clear" class="btn" type="button">Limpar</button>
+                <div id="operations-btns">
+                    <button id="btn-sub" class="btn" type="button">Subtrair</button>
+                    <button id="btn-sum" class="btn" type="button">Somar</button>
+                </div>
             </form>
         </div>
         <div id="div-result">
-            <label>Result:</label>
+            <label>Resultado:</label>
             <input id="input-result" type="text" readonly/>
         </div>
+        <footer>
+            <label>Criado por Lucca A. Martins</label>
+            <a href="https://www.linkedin.com/in/lucca-a-martins">Linkedin</a>
+        </footer>
     </body>
 </html>
