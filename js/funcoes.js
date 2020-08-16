@@ -34,8 +34,8 @@ $(document).ready(function(){
             dynamic_Fields.append(newDiv);
         }
 
-        operation.prop('hidden', false);
-        btn_Calculate.prop('hidden', false);
+        // operation.prop('hidden', false);
+        // btn_Calculate.prop('hidden', false);
     }
 
     $('#operation').on('change', function(){
@@ -48,7 +48,6 @@ $(document).ready(function(){
         $(".field").each(function(){
             var value = parseFloat($(this).val());
             if(!$.isNumeric(value)){
-                alert("Valores inválidos!");
                 validation = false;
                 return false;
             }
@@ -63,12 +62,15 @@ $(document).ready(function(){
         if(validateFields()){
             fields.forEach(function(value, index){
                 if(index == 0)
-                    result = value;
+                result = value;
                 else
-                    result += value;
+                result += value;
             })
+            $(document.getElementById('invalid-fields')).css({"visibility":"hidden"});
             showResult(result);
         }
+        else
+            $(document.getElementById('invalid-fields')).css({"visibility":"visible"});
     })
 
     btn_sub.click(function(){
@@ -76,25 +78,31 @@ $(document).ready(function(){
         if(validateFields()){
             fields.forEach(function(value, index){
                 if(index == 0)
-                    result = value; 
+                result = value; 
                 else
-                    result -= value;
+                result -= value;
             })
+            $(document.getElementById('invalid-fields')).css({"visibility":"hidden"});
             showResult(result);
         }
+        else
+            $(document.getElementById('invalid-fields')).css({"visibility":"visible"});
+
     })
 
     btn_clear.click(function(){
-        $(document.getElementById('div-fields')).css({"visibility": "hidden"});
+        $(document.getElementById('div-fields')).css({"visibility": "collapse"});
         $(document.getElementById('div-result')).css({"visibility": "hidden"});
+        $(document.getElementById('invalid-fields')).css({"visibility":"hidden"});
     })
 
     btn_Generate.click(function(){
         numberFields = document.getElementById('input-numberFields').value;
         if(!$.isNumeric(numberFields) || numberFields < 2){
-            alert("O número de campos deve ser um valor numérico, inteiro, e igual ou maior que 2!");
+            $(document.getElementById('invalid-numberFields')).css({"visibility":"visible"});
         }
         else{
+            $(document.getElementById('invalid-numberFields')).css({"visibility":"hidden"});
             $(document.getElementById('div-fields')).css({"visibility":"visible"});
             replicateFields(numberFields);
         }

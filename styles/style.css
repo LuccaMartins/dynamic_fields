@@ -36,7 +36,7 @@ body{
 }
 
 input{
-    outline: none;
+    outline: 0;
     
 }
 
@@ -63,14 +63,14 @@ input{
 }
 
 #input-numberFields{
-    background: var(--color-bg-secondary);
-    width: 60%;
+    width: 90%;
     height: 3rem;
-    margin-right: 1rem;
     border: 1px solid var(--color-border);
     border-radius: 1rem;
+    justify-self: center;
     text-align: center;
     font-size: 2rem;
+    outline: none;
 }
 
 #operations-btns{
@@ -121,7 +121,7 @@ input{
 }
 
 #btn-generate{
-    width: 40%;
+    width: 100%;
     height: 3rem;
     border: 1px solid var(--color-border);
     border-radius: 2rem 0.5rem;
@@ -132,6 +132,18 @@ input{
 #btn-generate:hover{
     background-color: var(--color-border-lighter);
     font-size: 1.4rem;
+}
+
+#invalid-numberFields{
+    color: red;
+    justify-self: center;
+    visibility: hidden;
+}
+
+#invalid-fields{
+    color: red;
+    justify-self: center;
+    visibility: hidden;
 }
 
 #div-fields{
@@ -166,7 +178,8 @@ input{
 
 
 #div-input-btn{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     justify-content: center;    
 }
@@ -261,7 +274,7 @@ footer a:hover{
     }
 
     .field{
-        border: 1px solid var(--color-border);
+        border: 1px solid #cacaca;
     }
 
     #div-start{
@@ -269,9 +282,8 @@ footer a:hover{
         font-size: 1px;
         text-align: left;
     }
-
-    #div-start label{
-        margin-left: 4rem;
+    #div-start > label{
+        justify-self: center;
     }
 
     #div-fields{
